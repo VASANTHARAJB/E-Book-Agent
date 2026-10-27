@@ -1,0 +1,26 @@
+{
+  "name": "digital-product-studio-saas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI Digital Product Studio SaaS: Next.js web app + Express API + local MCP server",
+  "workspaces": [
+    "mcp",
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,green \"npm run dev -w server\" \"npm run dev -w web\"",
+    "dev:api": "npm run dev -w server",
+    "dev:web": "npm run dev -w web",
+    "build:web": "npm run build -w web",
+    "start": "concurrently -n api,web \"npm run start -w server\" \"npm run start -w web\"",
+    "test:mcp": "node mcp/test/smoke.js",
+    "usage": "node server/scripts/usage.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  },
+  "engines": {
+    "node": ">=22.13"
+  }
+}

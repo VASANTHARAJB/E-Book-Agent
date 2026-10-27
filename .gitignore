@@ -1,0 +1,9 @@
+node_modules/
+.next/
+server/data/
+mcp/storage/
+.env
+.env.local
+*.log
+tsconfig.tsbuildinfo
+next-env.d.ts
